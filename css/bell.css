@@ -136,6 +136,22 @@ a{
 	fill: black;
 }
 
+.run-button {
+	cursor: pointer;
+}
+.run-button:hover rect {
+	fill: #666;
+}
+.wheelbutton:hover {
+	stroke: black !important;
+	stroke-dasharray: 2,2;
+}
+.hv-selection-button-contents, .hv-button {
+	cursor: pointer;
+}
+g:hover > .hv-button{
+	fill: #666 !important;
+}
 /*.run-button text{*/
 .button text{
 	fill:white;
@@ -185,9 +201,9 @@ text.result{
 }
 
 .wheelbutton{
-	fill:white;
+	fill:transparent;
 	stroke:none;
-	opacity:0;
+	cursor: pointer;
 }
 
 .center-circle.selectable{
