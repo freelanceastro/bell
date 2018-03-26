@@ -124,6 +124,7 @@ a{
 .photon{
 	/*color:black;*/
 	fill:url(#ball_gradient);
+	r: 1.8;
 }
 
 .animatepath{fill:none;stroke:none;}
