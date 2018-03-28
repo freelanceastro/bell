@@ -200,7 +200,7 @@ $(function(){
     var xleg = 1.732*yleg; // 1.732 = sqrt(3), pretty much.
 
     // First the balls (i.e. photons). They need to be here because we want them underneath everything.
-    var photon_radius = 1.7;
+    var photon_radius = 1.9;
     var ball_y_offset = -0.325
     var Aball = dcasino.circle().radius(photon_radius);//.id("Aball");
     Aball.addClass('photon');
