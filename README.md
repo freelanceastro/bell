@@ -1,5 +1,5 @@
 # bell
-An interactive essay explaining [Bell's theorem](https://en.wikipedia.org/wiki/Bell%27s_theorem) in non-technical language.You can play with it [here](http://freelanceastro.github.io/bell).
+An interactive essay explaining [Bell's theorem](https://en.wikipedia.org/wiki/Bell%27s_theorem) in non-technical language. You can play with it [here](http://freelanceastro.github.io/bell).
 
 Originally created as an online component to go with my book, [_What Is Real? The Unfinished Quest for the Meaning of Quantum Physics_](http://freelanceastrophysicist.com/whatisreal), published in March 2018 by [Basic Books](http://basicbooks.com).
 
