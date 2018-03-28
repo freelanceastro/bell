@@ -37,11 +37,25 @@ h1{
 	/*font-family: 'Montserrat'*/
 	/*font-weight:bold;*/
 	text-align: center;
+	font-size: 45px;
+	/*width: 600px;*/
+	margin: 25px auto 20px auto;
+	font-weight: bold;
+}
+
+.subtitle {
+	text-align: center;
+	font-size: 25px;
+	margin: -12px auto 40px auto;
+	/*width: 800px;*/
 }
 
 h2{
 	font-family: 'PT-Serif', serif;
 	font-weight: bold;
+	margin-bottom: 30px;
+	font-size: 40px;
+	margin-top:;
 }
 
 h3{
@@ -51,11 +65,19 @@ h3{
 p{
 	font-size: 1.3em;
 	font-family: 'PT-Serif', serif;
+	margin-bottom: 28px;
 }
 
 a{
 	font-size: 1.3em;
 	font-family: 'PT-Serif', serif;
+}
+.intro-text {
+    padding: 35px 40px 8px 40px;
+	background-color: #cfe4ff;
+	margin: 30px 0 60px 0;
+	border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 
 /*Stuff for the external SVGs*/
@@ -102,6 +124,7 @@ a{
 .photon{
 	/*color:black;*/
 	fill:url(#ball_gradient);
+	r: 1.8;
 }
 
 .animatepath{fill:none;stroke:none;}
@@ -114,6 +137,22 @@ a{
 	fill: black;
 }
 
+.run-button {
+	cursor: pointer;
+}
+.run-button:hover rect {
+	fill: #666;
+}
+.wheelbutton:hover {
+	stroke: black !important;
+	stroke-dasharray: 2,2;
+}
+.hv-selection-button-contents, .hv-button {
+	cursor: pointer;
+}
+g:hover > .hv-button{
+	fill: #666 !important;
+}
 /*.run-button text{*/
 .button text{
 	fill:white;
@@ -163,9 +202,9 @@ text.result{
 }
 
 .wheelbutton{
-	fill:white;
+	fill:transparent;
 	stroke:none;
-	opacity:0;
+	cursor: pointer;
 }
 
 .center-circle.selectable{
@@ -287,6 +326,7 @@ rect.hv-button{
 	color: gray;
 	font-style: italic;
 	font-size: 1.2em;
+	margin-bottom: 10px;
 }
 
 figcaption{
@@ -303,4 +343,5 @@ hr{
 	height: 10px;
 	border: 0;
 	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+	margin: 30px 0;
 }
