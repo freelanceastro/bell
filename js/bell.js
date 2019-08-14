@@ -83,6 +83,14 @@ $(function(){
   ball_gradient.attr({cx:0.35, cy:0.35});
   ball_gradient.radius(0.25);
 
+  // And here's a dropshadow for the balls, just to make them even more obvious.
+  var ball_dropshadow = new SVG.Filter();
+  ball_dropshadow.offset(0.75, 0.75).result('offsetFilter').in(ball_dropshadow.sourceAlpha);
+  ball_dropshadow.gaussianBlur(0.5).in("offsetFilter").result('blurryoffsetFilter');
+  ball_dropshadow.blend(ball_dropshadow.source, 'blurryoffsetFilter');
+  ball_dropshadow.attr({height:'150%', width:'150%'});
+
+
   // This is the callback function, where all the actual stuff we want to do will live. Over 90% of the code will be here.
   // This function will get called only when all the external SVG stuff has been loaded in.
   var load_callback = function(){
@@ -199,17 +207,23 @@ $(function(){
     var hyp = 2*yleg;
     var xleg = 1.732*yleg; // 1.732 = sqrt(3), pretty much.
 
-    // First the balls (i.e. photons). They need to be here because we want them underneath everything.
-    var photon_radius = 1.9;
-    var ball_y_offset = -0.325
+    // First the machine. Since the center of the machine will always be under a control button,
+    // this is really only needed for drawing the two ball ramps from the center down to the triple wheel constructs.
+    // We want those ramps under the balls, so this comes first.
+    var cmachine = dcasino.use(dmachine);
+
+    // Next, the balls (i.e. photons). They need to be here because we want them underneath everything except the ramps.
+    var photon_radius = 3.5;//1.9;
+    var ball_y_offset = -0.325;
     var Aball = dcasino.circle().radius(photon_radius);//.id("Aball");
     Aball.addClass('photon');
+    Aball.filter(ball_dropshadow);
     var Bball= Aball.clone()//.id('Bball')
     Aball.center(-machine_box_width/2 + photon_radius, machine_y_offset + ball_y_offset);
     Bball.center(machine_box_width/2 - photon_radius, machine_y_offset + ball_y_offset);
 
     // Then the machine.
-    var cmachine = dcasino.use(dmachine);
+    // var cmachine = dcasino.use(dmachine);
 
     // Left-hand triple-wheel construct.
     // Need to insert an invisible ball here for later use, 
