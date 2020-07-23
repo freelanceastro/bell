@@ -68,7 +68,10 @@ $(function(){
   // Create containers for our external SVG components inside the definitions.
   // The SVG definitions are are basically a container that makes anything inside invisible.
   // That's useful, because we'll want to make copies of these things, and make each copy do different things without altering the masters.
-  var definitions = canvas.defs();
+  // var definitions = canvas.defs();
+  // Had to use a group instead of definitions, because apparently Firefox 78 on Windows 10 doesn't measure bbox sizes properly in SVG definitions. 
+  // This raised all kinds of problems with positioning. Could be a bug in Firefox. I may report it. -- AMB, 2020.07.23
+  var definitions = canvas.group(); 
   var dwheel = definitions.group().id("dwheel");
   var dmachine = definitions.group().id('dmachine');
   var dselector = definitions.group().id('dselector');
